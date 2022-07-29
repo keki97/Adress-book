@@ -4,10 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Address Book</title>
   </head>
   <body>
+    <nav class="nav-bar">
+      <img src="address-book.png" alt="Address-book logo" class="logo-img" />
+      <header><h1 class="header">Address Book</h1></header>
+      <ion-icon name="person-add-outline" class="add-person"></ion-icon>
+    </nav>
+    <main class="main-section">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Aleksandar</td>
+            <td>Kekerovic</td>
+            <td>aleksandar.kekerovic97@gmail.com</td>
+            <td>066954824</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Jovan</td>
+            <td>Tramosljika</td>
+            <td>js@gmail.com</td>
+            <td>06521485</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Ogi</td>
+            <td>Janka</td>
+            <td>oj@gmail.com</td>
+            <td>158456564</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="form-container">
+        <form class="form" action="">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" />
+
+          <label for="last-name">Last name:</label>
+          <input type="text" name="last-name" id="last-name" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+
+          <label for="phone-number">Phone:</label>
+          <input type="tel" id="phone-number" name="phone-number" />
+          <button class="btn">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
