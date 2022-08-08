@@ -14,7 +14,9 @@ addBtn.addEventListener("click", function () {
   addModal.style.display = "block";
 });
 
-closeModal.addEventListener("click", function () {});
+closeModal.addEventListener("click", function () {
+  addModal.style.display = "none";
+});
 
 submitBtn.addEventListener("click", function () {
   const html = `
