@@ -37,6 +37,7 @@ body {
 .add-person {
   width: 48px;
   height: 48px;
+  cursor: pointer;
 }
 
 /* MAIN-SECTION */
@@ -80,14 +81,14 @@ body {
 .form-container {
   height: 100%;
   /* width: 1200px; */
-  padding: 64px 400px;
+  padding: 64px 356px;
   border: 1px solid black;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.705);
-  /* display: none; */
+  display: none;
 }
 
 .close {
@@ -97,6 +98,7 @@ body {
   position: absolute;
   top: 20px;
   right: 50px;
+  cursor: pointer;
 }
 
 .form {
@@ -139,7 +141,7 @@ input:-webkit-autofill {
   letter-spacing: 1.3px;
   border: 1px solid black;
   color: #fff;
-  background-color: #0099cc;
+  background-color: #3497da;
   background-repeat: no-repeat;
   background-position: -120px -120px, 0 0;
 

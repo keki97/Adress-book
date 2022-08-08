@@ -23,7 +23,6 @@
       <table class="table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -31,15 +30,14 @@
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
+        <tbody class="table-body">
+          <!--   <tr>
             <td>1</td>
             <td>Aleksandar</td>
             <td>Kekerovic</td>
             <td>aleksandar.kekerovic97@gmail.com</td>
             <td>066954824</td>
           </tr>
-
           <tr>
             <td>2</td>
             <td>Jovan</td>
@@ -47,30 +45,29 @@
             <td>js@gmail.com</td>
             <td>06521485</td>
           </tr>
-
           <tr>
             <td>3</td>
             <td>Ogi</td>
             <td>Janka</td>
             <td>oj@gmail.com</td>
             <td>158456564</td>
-          </tr>
+          </tr>-->
         </tbody>
       </table>
 
       <div class="form-container">
-        <form class="form" action="">
+        <form action="javascript:void(0);" class="form">
           <label for="name">Name:</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" required />
 
           <label for="last-name">Last name:</label>
-          <input type="text" name="last-name" id="last-name" />
+          <input type="text" name="last-name" id="last-name" required />
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" required />
 
           <label for="phone-number">Phone:</label>
-          <input type="tel" id="phone-number" name="phone-number" />
+          <input type="tel" id="phone-number" name="phone-number" required />
           <button type="submit" class="btn">Submit</button>
         </form>
         <ion-icon name="close" class="close"></ion-icon>
