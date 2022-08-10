@@ -1,9 +1,10 @@
 "use strict";
 
-const addressBook = [];
+let addressBook = [];
 
 const addBtn = document.querySelector(".add-person");
 const addModal = document.querySelector(".form-container");
+const toggleOverlay = document.querySelector(".form-overlay");
 const closeModal = document.querySelector(".close");
 const submitBtn = document.querySelector(".btn");
 const nameInput = document.getElementById("name");
@@ -15,10 +16,12 @@ let html;
 
 addBtn.addEventListener("click", function () {
   addModal.style.display = "block";
+  toggleOverlay.style.display = "block";
 });
 
 closeModal.addEventListener("click", function () {
   addModal.style.display = "none";
+  toggleOverlay.style.display = "none";
 });
 
 const insertHTML = function (el, i) {
@@ -35,11 +38,11 @@ const insertHTML = function (el, i) {
   tableInput.insertAdjacentHTML("beforeend", html);
 };
 
-// const displayHTML = function () {
-//   for (let i = 0; i < addressBook.length; i++) {
-//     insertHTML(addressBook[i], i);
-//   }
-// };
+const displayHTML = function () {
+  for (let i = 0; i < addressBook.length; i++) {
+    insertHTML(addressBook[i], i);
+  }
+};
 
 const add = function (newPerson) {
   addressBook.push(newPerson);
@@ -63,3 +66,18 @@ submitBtn.addEventListener("click", function () {
   emailInput.value = "";
   phoneInput.value = "";
 });
+
+function setLocalStorage() {
+  localStorage.addressBook = JSON.stringify(addressBook);
+}
+
+window.addEventListener("beforeunload", setLocalStorage);
+
+window.addEventListener("load", function () {
+  if (localStorage.addressBook) {
+    addressBook = JSON.parse(localStorage.addressBook);
+    displayHTML();
+  }
+});
+
+localStorage.clear();

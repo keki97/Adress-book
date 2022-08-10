@@ -45,7 +45,9 @@ body {
 /* TABLE */
 .main-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
 .table {
@@ -62,13 +64,13 @@ body {
 
 .table tbody tr:nth-child(even) {
   background-color: #3497da;
-  color: #f1f8fc;
+  color: #fff;
 }
 
 .table th {
   padding: 12px 24px;
   border: none;
-  color: #f1f8fc;
+  color: #fff;
 }
 
 .table td {
@@ -79,15 +81,25 @@ body {
 /* FORM */
 
 .form-container {
-  height: 100%;
-  /* width: 1200px; */
-  padding: 64px 356px;
   border: 1px solid black;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.705);
+  display: none;
+  z-index: 1000;
+}
+
+.form-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
   display: none;
 }
 
@@ -96,9 +108,10 @@ body {
   height: 48px;
   color: #fff;
   position: absolute;
-  top: 20px;
-  right: 50px;
+  top: -50px;
+  right: -10px;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .form {
