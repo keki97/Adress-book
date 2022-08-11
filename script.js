@@ -12,7 +12,11 @@ const lastNameInput = document.getElementById("last-name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone-number");
 const tableInput = document.querySelector(".table-body");
+const tableEl = document.querySelector(".table");
+const deleteAll = document.querySelector(".delete-all");
 let html;
+let x = 0;
+// let deleteEl;
 
 addBtn.addEventListener("click", function () {
   addModal.style.display = "block";
@@ -26,12 +30,13 @@ closeModal.addEventListener("click", function () {
 
 const insertHTML = function (el, i) {
   const html = `
-  <tr>
+  <tr id='${i}'>
     <td>${i + 1}</td>
     <td>${el.firstName}</td>
     <td>${el.lastName}</td>
     <td>${el.email}</td>
     <td>${el.phoneNumber}</td>
+    <td><button class='edit-del-btn edit' data-id=${i}>Edit</button> <button class='edit-del-btn delete' data-id=${i}>Del</button></td>
   </tr>
 `;
 
@@ -51,6 +56,7 @@ const add = function (newPerson) {
 
 submitBtn.addEventListener("click", function () {
   addModal.style.display = "none";
+  toggleOverlay.style.display = "none";
 
   const newPerson = {
     firstName: nameInput.value,
@@ -80,4 +86,19 @@ window.addEventListener("load", function () {
   }
 });
 
-localStorage.clear();
+tableEl.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains("delete")) {
+    const id = e.target.getAttribute("data-id");
+    addressBook.splice(id, 1);
+    tableInput.innerHTML = "";
+    displayHTML();
+    console.log(addressBook);
+  }
+});
+
+deleteAll.addEventListener("click", function () {
+  tableInput.innerHTML = "";
+  addressBook.splice(0, addressBook.length);
+});

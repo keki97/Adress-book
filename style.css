@@ -203,3 +203,19 @@ input:-webkit-autofill {
   -moz-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
+
+/* BUTTONS */
+
+.edit-del-btn {
+  padding: 3px 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #df4759;
+}
+
+.delete-all {
+  background-color: #df4759;
+}
