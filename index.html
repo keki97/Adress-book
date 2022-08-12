@@ -34,62 +34,54 @@
           </tr>
         </thead>
 
-        <tbody class="table-body">
-          <!-- <tr>
-            <td>1</td>
-            <td>Aleksandar</td>
-            <td>Kekerovic</td>
-            <td>aleksandar@gmail.com</td>
-            <td>066954824</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jovan</td>
-            <td>Tramosljika</td>
-            <td>js@gmail.com</td>
-            <td>06521485</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Ogi</td>
-            <td>Janka</td>
-            <td>oj@gmail.com</td>
-            <td>158456564</td>
-          </tr> -->
-        </tbody>
+        <tbody class="table-body"></tbody>
       </table>
       <button class="edit-del-btn delete-all">Delete All</button>
       <div class="form-container container">
         <form action="/" class="form">
           <label for="name">Name:</label>
           <input type="text" name="name" id="name" />
+          <div id="name-error" class="error"></div>
 
           <label for="last-name">Last name:</label>
           <input type="text" name="last-name" id="last-name" />
+          <div id="last-name-error" class="error"></div>
 
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" />
+          <div id="email-error" class="error"></div>
 
           <label for="phone-number">Phone:</label>
-          <input type="tel" id="phone-number" name="phone-number" />
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            placeholder="06# ### ###"
+          />
+          <div id="phone-error" class="error"></div>
+
           <button type="submit" class="btn btn-submit">Submit</button>
           <ion-icon name="close" class="close"></ion-icon>
         </form>
       </div>
 
       <div class="edit-form-container container">
-        <form action="javascript:void(0);" class="form">
+        <form action="javascript:void(0);" class="form form-edit">
           <label for="edit-name">Name:</label>
           <input type="text" name="edit-name" id="edit-name" />
+          <div id="name-error-edit" class="error"></div>
 
           <label for="edit-last-name">Last name:</label>
           <input type="text" name="edit-last-name" id="edit-last-name" />
+          <div id="last-name-error-edit" class="error"></div>
 
           <label for="edit-email">Email:</label>
           <input type="email" id="edit-email" name="edit-email" />
+          <div id="email-error-edit" class="error"></div>
 
           <label for="edit-phone-number">Phone:</label>
           <input type="tel" id="edit-phone-number" name="edit-phone-number" />
+          <div id="phone-error-edit" class="error"></div>
           <button type="submit" class="btn btn-edit">Save</button>
           <ion-icon name="close" class="close"></ion-icon>
         </form>
