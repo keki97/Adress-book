@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="address-book.png" />
     <title>Address Book</title>
   </head>
   <body>
@@ -58,8 +59,8 @@
         </tbody>
       </table>
       <button class="edit-del-btn delete-all">Delete All</button>
-      <div class="form-container">
-        <form action="javascript:void(0);" class="form">
+      <div class="form-container container">
+        <form action="/" class="form">
           <label for="name">Name:</label>
           <input type="text" name="name" id="name" />
 
@@ -71,7 +72,25 @@
 
           <label for="phone-number">Phone:</label>
           <input type="tel" id="phone-number" name="phone-number" />
-          <button type="submit" class="btn">Submit</button>
+          <button type="submit" class="btn btn-submit">Submit</button>
+          <ion-icon name="close" class="close"></ion-icon>
+        </form>
+      </div>
+
+      <div class="edit-form-container container">
+        <form action="javascript:void(0);" class="form">
+          <label for="edit-name">Name:</label>
+          <input type="text" name="edit-name" id="edit-name" />
+
+          <label for="edit-last-name">Last name:</label>
+          <input type="text" name="edit-last-name" id="edit-last-name" />
+
+          <label for="edit-email">Email:</label>
+          <input type="email" id="edit-email" name="edit-email" />
+
+          <label for="edit-phone-number">Phone:</label>
+          <input type="tel" id="edit-phone-number" name="edit-phone-number" />
+          <button type="submit" class="btn btn-edit">Save</button>
           <ion-icon name="close" class="close"></ion-icon>
         </form>
       </div>

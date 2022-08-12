@@ -80,7 +80,7 @@ body {
 
 /* FORM */
 
-.form-container {
+.container {
   border: 1px solid black;
   position: absolute;
   top: 50%;
