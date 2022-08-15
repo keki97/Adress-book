@@ -38,6 +38,7 @@ body {
   width: 48px;
   height: 48px;
   cursor: pointer;
+  color: darkblue;
 }
 
 /* MAIN-SECTION */
@@ -52,19 +53,22 @@ body {
 
 .table {
   border-collapse: collapse;
+  margin: 0 12px;
 }
 
 .table thead {
-  background-color: #3497da;
+  background-color: darkblue;
 }
 
 .table tbody tr:nth-child(odd) {
-  background-color: #d6eaf8;
+  background-color: #fff;
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #3497da;
+  background-color: #dfdfdf;
+  background-color: #c4dff0;
   color: #fff;
+  color: #00005a;
 }
 
 .table th {
@@ -89,6 +93,7 @@ body {
   background-color: rgba(0, 0, 0, 0.705);
   display: none;
   z-index: 1000;
+  /* overflow: hidden; */
 }
 
 .form-overlay {
@@ -222,12 +227,167 @@ input:-webkit-autofill {
   padding: 3px 6px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .delete {
+  font-weight: bold;
+}
+
+.delete:hover {
   background-color: #df4759;
+  color: #fff;
 }
 
 .delete-all {
   background-color: #df4759;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 16px;
+  box-shadow: 0 5px rgba(153, 153, 153, 0.699);
+}
+
+.delete-all:hover {
+  background-color: #e2132c;
+}
+
+.delete-all:active {
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.edit {
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.edit:hover {
+  background-color: #00008b;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 40px;
+  }
+
+  .header {
+    font-size: 36px;
+  }
+
+  .logo-img {
+    width: 48px;
+  }
+
+  .add-person {
+    width: 36px;
+    height: 36px;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tbody tr:nth-child(odd) {
+    /* background-color: rgb(16, 16, 138);
+    background-color: blue; */
+    /* background-color: #1da1f2; */
+    background-color: #4267b2;
+
+    color: #fff;
+  }
+
+  /* .table tbody tr:nth-child(even) {
+    background-color: #dfdfdf;
+    background-color: #c4dff0;
+    color: #fff;
+    color: rgb(0, 0, 90);
+  } */
+
+  .table td {
+    border: 1px solid rgb(255, 255, 255);
+    text-align: right;
+    padding: 12px;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    /* width: 50%; */
+    text-align: left;
+    padding-left: 12px;
+    font-weight: 700;
+  }
+
+  .table tr {
+    margin-bottom: 16px;
+  }
+
+  .delete-all {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 540px) {
+  body {
+    padding: 0 16px;
+  }
+
+  .nav-bar {
+    width: 100%;
+    padding: 16px 6px 32px;
+    justify-content: space-between;
+  }
+
+  .header {
+    font-size: 32px;
+  }
+
+  .logo-img {
+    width: 36px;
+  }
+
+  .add-person {
+    width: 32px;
+    height: 32px;
+  }
+
+  .form input {
+    font-size: 14px;
+  }
+
+  .form label {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    font-size: 24px;
+  }
+
+  .logo-img {
+    width: 28px;
+  }
+
+  .add-person {
+    width: 30px;
+    height: 30px;
+  }
+
+  .table td {
+    font-size: 15px;
+  }
 }

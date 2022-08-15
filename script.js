@@ -23,12 +23,14 @@ const deleteAll = document.querySelector(".delete-all");
 addBtn.addEventListener("click", function () {
   addModal.style.display = "block";
   toggleOverlay.style.display = "block";
+  document.body.style.overflow = "hidden";
 });
 
 const close = function () {
   addModal.style.display = "none";
   toggleOverlay.style.display = "none";
   addEditModal.style.display = "none";
+  document.body.style.overflow = "auto";
 };
 
 closeModal.forEach((el) => el.addEventListener("click", close));
@@ -50,12 +52,12 @@ const isPhoneNumber = function (phone) {
 const insertHTML = function (el, i) {
   const html = `
   <tr id='${i}'>
-    <td id='id-${i}'>${i + 1}</td>
-    <td id='first-name-${i}'>${el.firstName}</td>
-    <td id='last-name-${i}'>${el.lastName}</td>
-    <td id='email-${i}'>${el.email}</td>
-    <td id='phone-${i}'>${el.phoneNumber}</td>
-    <td><button class='edit-del-btn edit' data-id=${i}>Edit</button> <button class='edit-del-btn delete' data-id=${i}>Del</button></td>
+    <td data-label='ID' id='id-${i}'>${i + 1}</td>
+    <td data-label='Name' id='first-name-${i}'>${el.firstName}</td>
+    <td data-label='Last Name' id='last-name-${i}'>${el.lastName}</td>
+    <td data-label='Email' id='email-${i}'>${el.email}</td>
+    <td data-label='Phone' id='phone-${i}'>${el.phoneNumber}</td>
+    <td data-label='Edit/Delete'><button class='edit-del-btn edit' data-id=${i}>Edit</button> <button class='edit-del-btn delete' data-id=${i}>Del</button></td>
   </tr>
 `;
   tableInput.insertAdjacentHTML("beforeend", html);
@@ -77,6 +79,7 @@ const displayHTML = function () {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   checkInputs();
+  document.body.style.overflow = "auto";
 });
 
 // Local Storage
@@ -134,6 +137,7 @@ tableEl.addEventListener("click", function (e) {
     lastNameEdit.value = document.getElementById("last-name-" + id).textContent;
     emailEdit.value = document.getElementById("email-" + id).textContent;
     phoneEdit.value = document.getElementById("phone-" + id).textContent;
+    document.body.style.overflow = "hidden";
   }
   editForm.addEventListener("submit", function (e) {
     e.preventDefault();
